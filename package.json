@@ -1,23 +1,23 @@
 {
-  "name": "productos",
+  "name": "products",
   "version": "1.0.0",
-  "description": "Sistema de gestion de productos",
+  "description": "productos list",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
-    "test": "node index.js"
+    "test": "test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ditmar/productos.git"
+    "url": "git+ssh://git@github.com/Ditmar/products.git"
   },
+  "keywords": [
+    "javascript"
+  ],
   "author": "Ditmar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Ditmar/productos/issues"
+    "url": "https://github.com/Ditmar/products/issues"
   },
-  "homepage": "https://github.com/Ditmar/productos#readme",
-  "dependencies": {
-    "mustache": "^4.0.1"
-  }
+  "homepage": "https://github.com/Ditmar/products#readme"
 }

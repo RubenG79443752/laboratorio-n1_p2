@@ -1,39 +1,54 @@
-class Products {
-    constructor(name, description, quantity) {
-        this.name = name;
-        this.description = description;
-        this.quantity = quantity;
-    }
+class Product {
+  constructor(id, name, description, quatity) {
+    this.id = id;
+    this.name = name;
+    this.description = description;
+    this.quatity = quatity;
+  }
+  getId() {
+    return this.id;
+  }
+  getName() {
+    return this.name;
+  }
+  getDescription() {
+    return this.description;
+  }
+  getQuantity() {
+    return this.quatity;
+  }
 }
-class ProductsManagement {
-    constructor() {
-        this.listproducts = []
+export default  class ProductManagement {
+  constructor() {
+    this.listproducts = new Array();
+  }
+  addProduct(name, description, quantity) {
+    var date = new Date();
+    var product = new Product(date, name, description, quantity);
+    this.listproducts.push(product);
+  }
+  removeProducts(product) {
+    for (var i = 0; i < this.listproducts.length; i++) {
+      if (this.listproducts[i] == product) {
+        this.listproducts.splice(i, 1);
+        return true;
+      }
     }
-    addProducts(product) {
-        this.listproducts.push(product);
+    return false;
+  }
+  updateProdcuts(product, nameupdate, descupdate, quaupdate) {
+    for (var i = 0; i < this.listproducts.length; i++) {
+      if (this.listproducts[i] == product) {
+        this.listproducts[i].name = nameupdate;
+        this.listproducts[i].description = descupdate;
+        this.listproducts[i].quatity = quaupdate;
+        return true;
+      }
     }
-    removeProducts(product) {
-        for (var i = 0; i < this.listproducts.length; i++) {
-            if (this.listproducts[i] == product) {
-                this.listproducts.splice(i, 1);
-                return;
-            }
-        }
-        return;
-    }
-    updateProducts(product, newproduct) {
-        for (var i = 0; i < this.listproducts.length; i++) {
-            if (this.listproducts[i] == product) {
-                this.listproducts[i] = newproduct;
-                return;
-            }
-        }
-    }
-    showProducts() {
-        return this.listproducts;
-    }
-    showFirstProducts () {
-        return this.listproducts[0];
-    }
+    return false;
+  }
+  getList() {
+    return this.listproducts;
+  }
 }
-export {Products, ProductsManagement}
+export {Product}
